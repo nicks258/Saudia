@@ -1,0 +1,18 @@
+page-screensaver {
+.background{
+  background: url("../assets/imgs/Screensaver.png") no-repeat center center;
+  background-size: cover;
+  background-position: 100% 100%;
+  background-attachment: fixed;
+}
+  .take_flight {
+    background: rgba(81,120,145,0.5);
+    width: 230px;
+    margin-left: 36%;
+  }
+  .enter_draw {
+    background: rgba(81,120,145,0.5);
+    margin-left: 36%;
+    width: 230px;
+  }
+}

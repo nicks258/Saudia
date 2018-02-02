@@ -1,3 +1,30 @@
 page-home {
-
+.background{
+  background: url("../assets/imgs/login page01.png") no-repeat center center;
+  background-size: cover;
+  background-position: 100% 100%;
+  background-attachment: fixed;
+}
+  //.boarding_pass{
+  //  margin: 0 auto;
+  //
+  //  background: url("../../assets/imgs/boparding pass.png") no-repeat center center;
+  //  height: 100%;
+  //  background-attachment: fixed;
+  //
+  //}
+  .fields{
+   margin-top: 7%;
+  }
+  .boading_headng{
+   padding-top: 31%;
+    color: #868686;
+    margin-left: 42px;
+  }
+  .boarding_pass {
+    margin: 0 auto;
+    background: url("../assets/imgs/boparding pass.png") no-repeat;
+    height: 100%;
+    margin-top: 7%;
+  }
 }
