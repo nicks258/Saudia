@@ -47,16 +47,6 @@ export class PreviewPage {
     let options = { headers: headers };
 
 
-    this.http.post('http://saudia.digitalpico.com/login_rest/', body , options ).subscribe(data => {
-
-
-      var data_to_use = data.json();
-
-
-        alert(data_to_use);
-
-
-    });
 
 
 
@@ -71,12 +61,12 @@ export class PreviewPage {
       this.displayNetworkUpdate(data.type);
     }, error => console.error(error));
 
-    this.network.onDisconnect().subscribe(data => {
-      console.log(data);
-      this.displayNetworkUpdate(data.type);
-    }, error => console.error(error));
-    console.log("file->" + this.imagepath);
-    console.log("file->" + this.imagepath);
+    // this.network.onDisconnect().subscribe(data => {
+    //   console.log(data);
+    //   this.displayNetworkUpdate(data.type);
+    // }, error => console.error(error));
+    // console.log("file->" + this.imagepath);
+    // console.log("file->" + this.imagepath);
 
     // this.fileOpener.open(this.file.dataDirectory+'/'+this.fileName, 'image/png')
     //  .then(() => console.log('File is opened'))
@@ -119,7 +109,7 @@ export class PreviewPage {
       .then(data => {
         this.loadDeveloperData();
       });
-
+    this.sendToServer();
     this.developer = {};
 
   }
@@ -132,49 +122,40 @@ export class PreviewPage {
   //     return this.imagepath;
   //   }
   // }
-  // sendToServer(){
-  //   console.log("Post body Build");
-  //   // var headers = new Headers();
-  //   // headers.append("Accept", 'application/json');
-  //   // headers.append('Content-Type', 'application/json' );
-  //   // let options = new RequestOptions({ headers: headers });
-  //   let body = new FormData();
-  //   body.append('name', this.peopleDetail.name);
-  //   body.append('location', 'jaipur');
-  //   body.append('email', "uuuuu");
-  //   body.append('mobile', "iijjhjkh");
-  //   body.append('photo_base_64', "hghjghjg");
-  //   body.append('clicked_on', "24 jan 2018 11:30 pm");
-  //   body.append('user_id',  'saudia_dubai');
-  //   body.append('password', 'SD#123');
-  //
-  //   let headers = new Headers();
-  //   let options = { headers: headers };
-  //   this.postBody = {
-  //     location :'jaipur',
-  //     name : this.peopleDetail.name,
-  //     email: this.peopleDetail.email,
-  //     mobile : this.peopleDetail.phone_number,
-  //     photo_base_64: this.baseImageString,
-  //     clicked_on: new Date().toISOString(),
-  //     user_id : 'saudia_dubai',
-  //     password: 'SD#123'
-  //   };
-  //   console.log("Post body sent");
-  //   this.http.post("http://www.mojitolabs.com/api/login.php",{email:"mehrasumit258@gmail.com", password : "27021990"})
-  //     .map(res => res.json())
-  //     .subscribe(data => {
-  //       this.data = data;
-  //       console.log(this.data);
-  //     });
-  //   // this.http.post("http://rayqube.com/projects/saudia_photobooth/saveclick_rest",body,options)
-  //   //   .subscribe(data => {
-  //   //     console.log(data['_body']);
-  //   //   }, error => {
-  //   //     console.log("Error "+error);// Error getting the data
-  //   //   });
-  //   console.log("Post completed sent");
-  // }
+  sendToServer(){
+
+    let body = new FormData();
+    body.append('location', "jaipur");
+    body.append('name',this.peopleDetail.name);
+    body.append('mobile',this.peopleDetail.phone_number);
+    body.append('email',this.peopleDetail.email);
+    body.append('photo_base_64',this.baseImageString);
+    body.append('clicked_on',new Date().toISOString());
+    body.append('user_id',"saudia_dubai");
+    body.append('password',"SD#123");
+
+    let headers = new Headers();
+    let options = { headers: headers };
+
+
+    this.http.post('http://rayqube.com/projects/saudia_photobooth/saveclick_rest/', body , options ).subscribe(data => {
+
+      console.log(data);
+      var data_to_use = data.json();
+      console.log(data_to_use);
+
+      alert(JSON.stringify(data_to_use) );
+
+
+    });
+    // this.http.post("http://rayqube.com/projects/saudia_photobooth/saveclick_rest",body,options)
+    //   .subscribe(data => {
+    //     console.log(data['_body']);
+    //   }, error => {
+    //     console.log("Error "+error);// Error getting the data
+    //   });
+    console.log("Post completed sent");
+  }
 
   // getUsers() {
   //   if (this.data) {

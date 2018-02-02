@@ -23,24 +23,7 @@ import {Headers, Http} from "@angular/http";
 export class ScreensaverPage {
 
   constructor( public http :Http,public toast: Toast,public network:Network, public navCtrl: NavController, public navParams: NavParams) {
-    // let body = new FormData();
-    // body.append('user_id', "yy");
-    // body.append('password',"oo");
-    //
-    // let headers = new Headers();
-    // let options = { headers: headers };
-    //
-    //
-    // this.http.post('http://saudia-photobooth.springsportsacademy.com/saveclick_rest/', body , options ).subscribe(data => {
-    //
-    //
-    //   var data_to_use = data.json();
-    //
-    //
-    //   alert(JSON.stringify(data_to_use) );
-    //
-    //
-    // });
+
   }
 
   ionViewDidLoad() {
