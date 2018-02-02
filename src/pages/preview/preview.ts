@@ -33,6 +33,9 @@ export class PreviewPage {
   developers = [];
   fileName: any;
   peopleDetail = {
+    location:'',
+    username:'',
+    password:'',
     name:'',
     email:'',
     phone_number:''
@@ -91,14 +94,14 @@ export class PreviewPage {
       );
 
     let body = new FormData();
-    body.append('location', "jaipur");
+    body.append('location', this.peopleDetail.location);
     body.append('name',this.peopleDetail.name);
     body.append('mobile',this.peopleDetail.phone_number);
     body.append('email',this.peopleDetail.email);
     body.append('photo_base_64',this.baseImageString);
     body.append('clicked_on',new Date().toISOString());
-    body.append('user_id',"saudia_dubai");
-    body.append('password',"SD#123");
+    body.append('user_id',this.peopleDetail.username);
+    body.append('password',this.peopleDetail.password);
     let headers = new Headers();
     let options = { headers: headers };
     this.http.post('http://rayqube.com/projects/saudia_photobooth/saveclick_rest/', body , options ).subscribe(data => {

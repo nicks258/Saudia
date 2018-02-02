@@ -67,15 +67,15 @@ export class DatabaseProvider {
 
   getAllDevelopers() {
     return this.database.executeSql("SELECT * FROM people", []).then((data) => {
-      let developers = [];
+      let developers = {};
       if (data.rows.length > 0) {
         for (var i = 0; i < data.rows.length; i++) {
-          developers.push({
+          developers = {
             firstname: data.rows.item(i).firstname,
             lastname: data.rows.item(i).lastname,
             phonenumber: data.rows.item(i).phonenumber,
             email: data.rows.item(i).email
-          });
+          };
         }
       }
       return developers;

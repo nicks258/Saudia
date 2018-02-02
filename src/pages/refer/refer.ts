@@ -17,6 +17,7 @@ import {NativeStorage} from "@ionic-native/native-storage";
   templateUrl: 'refer.html',
 })
 export class ReferPage {
+  funct: any;
   name;
   location;
   username;
@@ -44,13 +45,13 @@ export class ReferPage {
     let body = new FormData();
     let date = new Date('2013-03-10T02:00:00Z');
 
-    body.append('location', "jaipur");
+    body.append('location', this.location);
     body.append('name',this.name);
     body.append('mobile',this.phone_number);
     body.append('email',"NA");
     body.append('clicked_on',date.getFullYear()+'-' + (date.getMonth()+1) + '-'+date.getDate());
-    body.append('user_id',"saudia_dubai");
-    body.append('password',"SD#123");
+    body.append('user_id',this.username);
+    body.append('password',this.password);
     let headers = new Headers();
     let options = { headers: headers };
     this.http.post('http://rayqube.com/projects/saudia_photobooth/savereferal_rest/', body , options ).subscribe(data => {
@@ -75,6 +76,14 @@ export class ReferPage {
     this.databaseprovider.getAllRefer().then(data => {
       this.developers = data;
       console.log(data);
+      this.developers.forEach(functionToIterate);
+      function  functionToIterate(){
+        for(let dev of this.developers)
+        {
+          console.log(dev.firstname + "->" + dev.lastname + "->" + dev.email)
+        }
+      }
     })
   }
+
 }

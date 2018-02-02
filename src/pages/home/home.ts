@@ -18,7 +18,9 @@ export class HomePage {
   peopleDetail = {};
   phone_number;
   last_name;
-
+  location;
+  username;
+  password;
   first_name;
   db: SQLiteObject;
   database: SQLiteObject;
@@ -44,11 +46,17 @@ export class HomePage {
   addDeveloper() {
     this.nativeStorage.getItem('authentication')
       .then(
-        data => console.log(data),
+        data => console.log(data.username +"->" + data.password+"->" + data.location,
+          this.location = data.location,
+          this.username = data.username,
+          this.password = data.password),
         error => console.error(error)
       );
     let nav = this.navCtrl;
     this.peopleDetail = {
+      location : this.location,
+      username : this.username,
+      password : this.password,
       name : this.first_name +" "+ this.last_name,
       email : this.email,
       phone_number : this.phone_number
