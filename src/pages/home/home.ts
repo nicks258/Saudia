@@ -6,6 +6,7 @@ import {BehaviorSubject} from "rxjs/BehaviorSubject";
 import { DatabaseProvider } from './../../providers/database/database';
 import {ReferPage} from "../refer/refer";
 import {CameraPage} from "../camera/camera";
+import {NativeStorage} from "@ionic-native/native-storage";
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -25,7 +26,7 @@ export class HomePage {
   // public database: SQLite;
   public people: Array<Object>;
   private databaseReady: BehaviorSubject<boolean>;
-  constructor(private toast: Toast, private databaseprovider: DatabaseProvider, private sqlite: SQLite,private platform: Platform, public navCtrl: NavController) {
+  constructor(public nativeStorage:NativeStorage, private toast: Toast, private databaseprovider: DatabaseProvider, private sqlite: SQLite,private platform: Platform, public navCtrl: NavController) {
     this.databaseprovider.getDatabaseState().subscribe(rdy => {
       if (rdy) {
         this.loadDeveloperData();
@@ -41,6 +42,11 @@ export class HomePage {
   }
 
   addDeveloper() {
+    this.nativeStorage.getItem('authentication')
+      .then(
+        data => console.log(data),
+        error => console.error(error)
+      );
     let nav = this.navCtrl;
     this.peopleDetail = {
       name : this.first_name +" "+ this.last_name,
@@ -57,31 +63,31 @@ export class HomePage {
     this.developer = {};
   }
 
-  Fetchdashboard(){
-    // this.sqlite.create({
-    //   name: 'data.db',
-    //   location: 'default'
-    // }).then((db: SQLiteObject) => {
-    this.db.executeSql('SELECT firstname AS firstname  FROM people ', {})
-      .then(res => {
-        if(res.rows.length>0) {
-          this.people.push({firstname:res.rows.item(0).firstname});
-          // for(var i=0; i<res.rows.length; i++) {
-          //   this.people.push({firstname:res.firstname.item(i).type,lastname:res.rows.item(i).lastname})
-          // }
-          console.log("name->" + res.rows.item(0).firstname);
-          console.log("Itesm->" + this.people);
-          alert("Data saved " + this.name);
-        }
-      })
-      .catch(e => {
-        console.log(e);
-        this.toast.show(e, '5000', 'center').subscribe(
-          toast => {
-            console.log(toast);
-          }
-        );
-      });
+  // Fetchdashboard(){
+  //   // this.sqlite.create({
+  //   //   name: 'data.db',
+  //   //   location: 'default'
+  //   // }).then((db: SQLiteObject) => {
+  //   this.db.executeSql('SELECT firstname AS firstname  FROM people ', {})
+  //     .then(res => {
+  //       if(res.rows.length>0) {
+  //         this.people.push({firstname:res.rows.item(0).firstname});
+  //         // for(var i=0; i<res.rows.length; i++) {
+  //         //   this.people.push({firstname:res.firstname.item(i).type,lastname:res.rows.item(i).lastname})
+  //         // }
+  //         console.log("name->" + res.rows.item(0).firstname);
+  //         console.log("Itesm->" + this.people);
+  //         alert("Data saved " + this.name);
+  //       }
+  //     })
+  //     .catch(e => {
+  //       console.log(e);
+  //       this.toast.show(e, '5000', 'center').subscribe(
+  //         toast => {
+  //           console.log(toast);
+  //         }
+  //       );
+  //     });
 
 
     // console.log("phone_number->" + this.phone_number +" " + "last_name" + this.last_name);
@@ -92,7 +98,7 @@ export class HomePage {
     //   console.log("ERROR: " + JSON.stringify(error.err));
     // });
   // })
-  }
+  // }
   // fillDatabase() {
   //   this.http.get('assets/dummyDump.sql')
   //     .map(res => res.text())

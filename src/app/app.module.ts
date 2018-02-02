@@ -21,6 +21,7 @@ import {TestPage} from "../pages/test/test";
 import {PreviewPage} from "../pages/preview/preview";
 import {Network} from "@ionic-native/network";
 import {OptionsPage} from "../pages/options/options";
+import {NativeStorage} from "@ionic-native/native-storage";
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import {OptionsPage} from "../pages/options/options";
     StatusBar,
     SplashScreen,
     SQLite,
+    NativeStorage,
     CameraPreview,
     FileOpener,
     Network,

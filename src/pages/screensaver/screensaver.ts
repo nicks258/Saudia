@@ -6,6 +6,7 @@ import {Network} from "@ionic-native/network";
 import {Toast} from "@ionic-native/toast";
 import {CameraPage} from "../camera/camera";
 import {Headers, Http} from "@angular/http";
+import {OptionsPage} from "../options/options";
 
 
 /**
@@ -28,6 +29,9 @@ export class ScreensaverPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ScreensaverPage');
+  }
+  options(){
+    this.navCtrl.push(OptionsPage,{animate: true, animation:'transition',duration:300, direction: 'forward'})
   }
   enterADraw(){
     let nav = this.navCtrl;

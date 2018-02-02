@@ -27,7 +27,7 @@
         <ion-row>
           <ion-col>
             <p style="margin-top: 7px; margin-left: 31%">Name<sup>*</sup></p>
-            <ion-input name= "first_name" [(ngModel)]="first_name" style="background-color:  rgba(215,209,193,0.5) ;width: 65%;height: 50%; " type="text">
+            <ion-input name= "name" [(ngModel)]="name" style="background-color:  rgba(215,209,193,0.5) ;width: 65%;height: 50%; " type="text">
             </ion-input>
           </ion-col>
         </ion-row>
@@ -45,7 +45,7 @@
       </ion-grid>
 
 
-      <button (click)="addDeveloper()" style="background: rgba(81,120,145,0.5); margin-top: -3px;     margin-left: 27%;"  ion-button>SUBMIT</button>
+      <button (click)="sendToServer()" style="background: rgba(81,120,145,0.5); margin-top: -3px;     margin-left: 27%;"  ion-button>SUBMIT</button>
     </form>
   </div>
 </div>
