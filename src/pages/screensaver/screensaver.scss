@@ -1,13 +1,14 @@
 page-screensaver {
 .background{
-  background: url("../assets/imgs/Screensaver.png") no-repeat center center;
+  background: url("../assets/imgs/01.png") no-repeat center center;
   background-size: cover;
   background-position: 100% 100%;
   background-attachment: fixed;
 }
   .take_flight {
-    background: rgba(81,120,145,0.5);
-    width: 230px;
+    background: transparent;
+    height: 88px;
+    width: 306px;
     margin-left: 36%;
   }
   .enter_draw {
@@ -19,7 +20,14 @@ page-screensaver {
     margin-top: 37%;
     margin-left: 30%;
   }
-  .shot{
+  .button_flight{
+    height: 88px;
+    width: 306px;
+  }
+  .shot {
     margin-left: 30%;
+    margin-top: 101%;
+    /* width: 142px; */
+    /* height: 79%; */
   }
 }

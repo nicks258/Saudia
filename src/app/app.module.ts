@@ -43,7 +43,7 @@ import {NativeStorage} from "@ionic-native/native-storage";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ReferPage,
+    // ReferPage,
     PreviewPage,
     HomePage,
     ScreensaverPage,
