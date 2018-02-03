@@ -97,5 +97,8 @@
     <allow-navigation href="http://192.168.2.8:8100" />
     <allow-navigation href="http://169.254.162.224:8100" />
     <plugin name="cordova-plugin-nativestorage" spec="~2.2.2" />
+    <allow-navigation href="http://169.254.82.8:8101" />
+    <allow-navigation href="http://169.254.43.179:8101" />
+    <allow-navigation href="http://192.168.2.4:8101" />
     <engine name="ios" spec="^4.5.4" />
 </widget>

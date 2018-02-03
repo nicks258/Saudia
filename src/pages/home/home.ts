@@ -28,7 +28,8 @@ export class HomePage {
   // public database: SQLite;
   public people: Array<Object>;
   private databaseReady: BehaviorSubject<boolean>;
-  constructor(public nativeStorage:NativeStorage, private toast: Toast, private databaseprovider: DatabaseProvider, private sqlite: SQLite,private platform: Platform, public navCtrl: NavController) {
+  constructor( public nativeStorage:NativeStorage, private toast: Toast, private databaseprovider: DatabaseProvider, private sqlite: SQLite,private platform: Platform, public navCtrl: NavController) {
+
     this.databaseprovider.getDatabaseState().subscribe(rdy => {
       if (rdy) {
         this.loadDeveloperData();

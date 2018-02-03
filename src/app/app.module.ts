@@ -38,7 +38,8 @@ import {NativeStorage} from "@ionic-native/native-storage";
     BrowserModule,
     HttpModule,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{scrollAssist:false,
+                                      autoFocusAssist:false}),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

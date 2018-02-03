@@ -1,12 +1,6 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content  class="background" padding>
+
+<ion-content   class="background-home" padding>
   <!--<h1 style="color: #18165A" align="center">BOARDING PASS!</h1>-->
   <div class="boarding_pass">
     <!--<img src="../../assets/imgs/boparding pass.png"/>-->
@@ -19,12 +13,12 @@
         <ion-row>
           <ion-col>
             <!--<p>First Name<sup>*</sup></p>-->
-            <ion-input class="title" name= "first_name" [(ngModel)]="first_name"  type="text">
+            <ion-input placeholder="Title" class="title" name= "first_name" [(ngModel)]="first_name"  type="text">
               </ion-input>
           </ion-col>
           <ion-col>
             <!--<p style="margin-left: -27%;">Last Name<sup>*</sup></p>-->
-            <ion-input class="name" name= "last_name" [(ngModel)]="last_name"  type="text">
+            <ion-input placeholder="Name" class="name" name= "last_name" [(ngModel)]="last_name"  type="text">
             </ion-input>
           </ion-col>
           <!--<ion-col>-->
@@ -37,7 +31,7 @@
         <ion-row>
           <ion-col>
           <!--<p>Phone Number<sup>*</sup></p>-->
-          <ion-input class="email " name= "phone_number" [(ngModel)]="phone_number"  type="text">
+          <ion-input placeholder="Email" class="email " name= "phone_number" [(ngModel)]="phone_number"  type="text">
           </ion-input>
           </ion-col>
         </ion-row>
@@ -48,13 +42,13 @@
         <ion-row>
           <ion-col>
             <!--<p>Email<sup>*</sup></p>-->
-            <ion-input name="email" [(ngModel)]="email" class="phone_number" type="text">
+            <ion-input placeholder="Phone Number" [(ngModel)]="email" class="phone_number" type="text">
             </ion-input>
           </ion-col>
         </ion-row>
       </ion-grid>
 
-    <button style="background: transparent;  margin-left: 30%;margin-top: 101px;width: 292px; height: 84px;" (click)="addDeveloper()" ion-button>SUBMIT</button>
+    <!--<button style="background: transparent;  margin-left: 30%;margin-top: 101px;width: 292px; height: 84px;" (click)="addDeveloper()" ion-button>   </button>-->
       </form>
   </div>
   </div>
