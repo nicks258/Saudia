@@ -10,12 +10,13 @@ import {CameraPage} from "../pages/camera/camera";
 import {TestPage} from "../pages/test/test";
 import {PreviewPage} from "../pages/preview/preview";
 import {OptionsPage} from "../pages/options/options";
+import {HomescreenPage} from "../pages/homescreen/homescreen";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = ScreensaverPage;
+  rootPage:any = HomescreenPage;
 
   constructor(private sqlite: SQLite,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

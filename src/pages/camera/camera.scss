@@ -1,7 +1,7 @@
 page-camera {
 
-  .background{
-    background: url("../assets/imgs/picpage.png") no-repeat center center;
+  .background-camera{
+    background: url("../assets/imgs/countdown_back.png") no-repeat center center;
     background-size: cover;
     background-position: 100% 100%;
     background-attachment: fixed;
@@ -39,7 +39,6 @@ page-camera {
     height: 250px;
     width: 250px;
     position: absolute;
-    tion: absolute;
     margin: 45% 34%;
     padding: 40px;
   }

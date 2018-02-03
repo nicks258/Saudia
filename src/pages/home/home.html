@@ -8,7 +8,7 @@
     <div class="fields">
 
 
-      <form  #registerForm="ngForm">
+
       <ion-grid>
         <ion-row>
           <ion-col>
@@ -31,7 +31,7 @@
         <ion-row>
           <ion-col>
           <!--<p>Phone Number<sup>*</sup></p>-->
-          <ion-input placeholder="Email" class="email " name= "phone_number" [(ngModel)]="phone_number"  type="text">
+          <ion-input placeholder="Email" class="email " name= "email" [(ngModel)]="email"  type="text">
           </ion-input>
           </ion-col>
         </ion-row>
@@ -42,14 +42,13 @@
         <ion-row>
           <ion-col>
             <!--<p>Email<sup>*</sup></p>-->
-            <ion-input placeholder="Phone Number" [(ngModel)]="email" class="phone_number" type="text">
+            <ion-input placeholder="Phone Number" name="phone_number" [(ngModel)]="phone_number" class="phone_number" type="text">
             </ion-input>
           </ion-col>
         </ion-row>
       </ion-grid>
 
-    <!--<button style="background: transparent;  margin-left: 30%;margin-top: 101px;width: 292px; height: 84px;" (click)="addDeveloper()" ion-button>   </button>-->
-      </form>
+    <button style="background: transparent;  margin-left: 30%;margin-top: 35%;width: 292px; height: 84px;" (click)="addDeveloper()" ion-button>   </button>
   </div>
   </div>
     <!--<ion-item>-->

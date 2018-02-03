@@ -22,8 +22,9 @@ import {OptionsPage} from "../options/options";
   templateUrl: 'screensaver.html',
 })
 export class ScreensaverPage {
-
+  optionSelected:any;
   constructor( public http :Http,public toast: Toast,public network:Network, public navCtrl: NavController, public navParams: NavParams) {
+    this.optionSelected = this.navParams.get("optionSelected");
 
   }
 
@@ -35,12 +36,21 @@ export class ScreensaverPage {
   }
   enterADraw(){
     let nav = this.navCtrl;
-    nav.push(ReferPage, {animate: true, animation:'transition',duration:300, direction: 'forward'});
+
   }
   takeAShot(){
     let nav = this.navCtrl;
-    console.log("Take A Shot");
-    nav.push(HomePage, {animate: true, animation:'transition',duration:300, direction: 'forward'});
+
+    // if(this.optionSelected.equals("refer"))
+    // {
+    //   console.log("Take A Shot");
+    //   nav.push(ReferPage, {optionSelected:this.optionSelected, animate: true, animation:'transition',duration:300, direction: 'forward'});
+    // }
+    // else
+      {
+      console.log("Take -> " + this.optionSelected);
+      nav.push(HomePage, {optionSelected:this.optionSelected,animate: true, animation:'transition',duration:300, direction: 'forward'});
+    }
   }
 
 }

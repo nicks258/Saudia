@@ -22,6 +22,7 @@ import {PreviewPage} from "../pages/preview/preview";
 import {Network} from "@ionic-native/network";
 import {OptionsPage} from "../pages/options/options";
 import {NativeStorage} from "@ionic-native/native-storage";
+import {HomescreenPage} from "../pages/homescreen/homescreen";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {NativeStorage} from "@ionic-native/native-storage";
     PreviewPage,
     OptionsPage,
     ReferPage,
+    HomescreenPage,
     ScreensaverPage,
     CameraPage
   ],
@@ -50,6 +52,7 @@ import {NativeStorage} from "@ionic-native/native-storage";
     ScreensaverPage,
     TestPage,
     OptionsPage,
+    HomescreenPage,
     CameraPage
   ],
   providers: [

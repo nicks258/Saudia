@@ -62,7 +62,7 @@ export class CameraPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad TestPage');
 
-    this.startTimer();
+    // this.startTimer();
 
   }
   timeInSeconds: number;
@@ -75,8 +75,6 @@ export class CameraPage {
   displayTime: string;
 
   ngOnInit() {
-    this.initTimer();
-
   }
 
   initTimer() {
@@ -193,6 +191,11 @@ export class CameraPage {
     console.log("Next Page");
     nav.push(PreviewPage, {people_detail:this.peopleDetail, file_name_final:this.file_name_final});
   }
+  startCameraPreview(){
+    this.initTimer();
+    this.startTimer();
+  }
 }
+
 
 
