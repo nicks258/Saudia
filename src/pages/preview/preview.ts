@@ -49,48 +49,49 @@ export class PreviewPage {
     this.peopleDetail = navParams.get('people_detail');
     this.imagepath = this.file.dataDirectory + '/' + this.fileName;
     this.addDeveloper();
+    this.sendDetailsToServer();
     // this.network.onConnect().subscribe(data => {
     //   console.log(data);
     //   this.displayNetworkUpdate(data.type);
     // }, error => console.error(error));
 
-    setTimeout(function () {
-      {
-        console.log("its time");
-
-        let body = new FormData();
-
-        // body.append('location', "jaipur");
-        // body.append('name',this.peopleDetail.name);
-        // body.append('mobile',this.peopleDetail.phone_number);
-        // body.append('email',this.peopleDetail.email);
-        // body.append('photo_base_64',this.baseImageString);
-        // body.append('clicked_on',new Date().toISOString());
-        // body.append('user_id',"nicks");
-        // body.append('password',"2702100000");
-
-        // body.append('location', "jaipur");
-        // body.append('name',"jaipur");
-        // body.append('mobile',"jaipur");
-        // body.append('email',"jaipur");
-        // body.append('photo_base_64',"jaipur");
-        // body.append('clicked_on',"jaipur");
-        // body.append('user_id',"nicks");
-        // body.append('password',"2702100000");
-        // let headers = new Headers();
-        // let options = { headers: headers };
-        // this.http.post('http://rayqube.com/projects/saudia_photobooth/saveclick_rest/', body , options ).subscribe(data => {
-        //   console.log(data);
-        //   let data_to_use = data.json();
-        //   console.log(data_to_use);
-        // });
-      }
-
-    },3000);
+    // setTimeout(function () {
+    //   {
+    //     console.log("its time");
+    //
+    //     let body = new FormData();
+    //
+    //     // body.append('location', "jaipur");
+    //     // body.append('name',this.peopleDetail.name);
+    //     // body.append('mobile',this.peopleDetail.phone_number);
+    //     // body.append('email',this.peopleDetail.email);
+    //     // body.append('photo_base_64',this.baseImageString);
+    //     // body.append('clicked_on',new Date().toISOString());
+    //     // body.append('user_id',"nicks");
+    //     // body.append('password',"2702100000");
+    //
+    //     // body.append('location', "jaipur");
+    //     // body.append('name',"jaipur");
+    //     // body.append('mobile',"jaipur");
+    //     // body.append('email',"jaipur");
+    //     // body.append('photo_base_64',"jaipur");
+    //     // body.append('clicked_on',"jaipur");
+    //     // body.append('user_id',"nicks");
+    //     // body.append('password',"2702100000");
+    //     // let headers = new Headers();
+    //     // let options = { headers: headers };
+    //     // this.http.post('http://rayqube.com/projects/saudia_photobooth/saveclick_rest/', body , options ).subscribe(data => {
+    //     //   console.log(data);
+    //     //   let data_to_use = data.json();
+    //     //   console.log(data_to_use);
+    //     // });
+    //   }
+    //
+    // },3000);
     setTimeout(function () {
       console.log("This is called ->navCtrl.push(ScreensaverPage) ");
       navCtrl.push(HomescreenPage)
-    },5000)
+    },10000)
     // this.network.onDisconnect().subscribe(data => {
     //   console.log(data);
     //   this.displayNetworkUpdate(data.type);
@@ -125,5 +126,38 @@ export class PreviewPage {
     console.log("You are now"+ connectionState +"via " +networkType);
   }
 
+  sendDetailsToServer(){
+    let body = new FormData();
+    let date = new Date(new Date().toISOString());
+    // body.append('location', "jaipur");
+    // body.append('name',this.peopleDetail.name);
+    // body.append('mobile',this.peopleDetail.phone_number);
+    // body.append('email',this.peopleDetail.email);
+    // body.append('photo_base_64',this.baseImageString);
+    // body.append('clicked_on',new Date().toISOString());
+    // body.append('user_id',"nicks");
+    // body.append('password',"2702100000");
+
+    body.append('location', "Saudia boarding photo booth");
+    body.append('name',this.peopleDetail.name);
+    body.append('mobile',this.peopleDetail.phone_number);
+    body.append('email',this.peopleDetail.email);
+    body.append('photo_base_64',this.baseImageString);
+    body.append('clicked_on',new Date().toISOString());
+    body.append('user_id',"saudia_dubai");
+    body.append('password',"SD#123");
+    let headers = new Headers();
+    let options = { headers: headers };
+    this.http.post('http://rayqube.com/projects/saudia_photobooth/saveclick_rest/', body , options ).subscribe(data => {
+      console.log(data);
+      let data_to_use = data.json();
+      console.log(data_to_use);
+    },error2 => {
+      // loadingPopup.dismiss();
+      console.log("error->" + error2);
+
+    });
+
+  }
 
 }
