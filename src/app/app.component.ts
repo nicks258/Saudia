@@ -11,6 +11,7 @@ import {TestPage} from "../pages/test/test";
 import {PreviewPage} from "../pages/preview/preview";
 import {OptionsPage} from "../pages/options/options";
 import {HomescreenPage} from "../pages/homescreen/homescreen";
+import {ScreenOrientation} from "@ionic-native/screen-orientation";
 
 @Component({
   templateUrl: 'app.html'
@@ -18,14 +19,14 @@ import {HomescreenPage} from "../pages/homescreen/homescreen";
 export class MyApp {
   rootPage:any = HomescreenPage;
 
-  constructor(private sqlite: SQLite,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(private screenOrientation: ScreenOrientation,private sqlite: SQLite,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
 
       statusBar.hide();
       splashScreen.hide();
-
+      this.screenOrientation.lock('portrait');
       // this.sqlite.create({
       //   name: 'data.db',
       //   location: 'default'

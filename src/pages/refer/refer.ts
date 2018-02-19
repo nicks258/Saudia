@@ -61,15 +61,15 @@ export class ReferPage {
     });
   }
   addLocalDB() {
-    let nav = this.navCtrl;
-    console.log("Button Clicked");
-    //TODO Code for inserting in sqlite
-    this.databaseprovider.addReferEntry(this.name,this.phone_number,'1')
-      .then(data => {
-        this.loadDeveloperData();
-      });
-    this.sendToServer();
-    this.developer = {};
+    // let nav = this.navCtrl;
+    // console.log("Button Clicked");
+    // //TODO Code for inserting in sqlite
+    // this.databaseprovider.addReferEntry(this.name,this.phone_number,'1')
+    //   .then(data => {
+    //     this.loadDeveloperData();
+    //   });
+    // this.sendToServer();
+    // this.developer = {};
 
   }
   loadDeveloperData() {

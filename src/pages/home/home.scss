@@ -1,6 +1,6 @@
 page-home {
 .background-home{
-  background: url("../assets/imgs/02.png") no-repeat center center;
+  background: url("../assets/imgs/bg.png") no-repeat center center;
   background-size: cover;
   background-position: 100% 100%;
   background-attachment: fixed;
@@ -15,7 +15,8 @@ page-home {
   //
   //}
   .fields{
-    margin-top: 38%;
+    width: 80%;
+    margin-top: 15%;
   }
   //.boading_headng{
   // padding-top: 31%;
@@ -36,8 +37,8 @@ page-home {
     position: fixed;
     width: 55%;
     color: #000;
-    margin-left: 116px;
-    margin-top: 28px;
+    margin-left: 125px;
+    margin-top: 34px;
   }
 
 
@@ -48,7 +49,7 @@ page-home {
     //height: 32%;
     color: #000;
     margin-left: 36px;
-    margin-top: 25px;
+    margin-top: 32px;
   }
   .email {
     //background: rgba(215, 209, 193, 0.5);
@@ -56,8 +57,8 @@ page-home {
     //height: 32%;
     position: fixed;
     color: #000;
-    margin-top: 107px;
-    margin-left: 115px;
+    margin-top: 117px;
+    margin-left: 120px;
   }
   .phone_number {
     //background: rgba(215, 209, 193, 0.5);
@@ -65,16 +66,36 @@ page-home {
     position: fixed;
     height: 32%;
     color: #000;
-    margin-left: 400px;
-    margin-top: 116px;
+    margin-left: 420px;
+    margin-top: 124px;
   }
   .button_submit{
-    background: transparent;
+    //background: transparent;
     margin-left: 30%;
     position: fixed;
     margin-top: 101px;
     width: 292px;
     height: 84px;
   }
+
+
+  .form_block {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background: url("../assets/imgs/block_bg.png") no-repeat center;
+    background-size: contain;
+    background-color: transparent;
+    /* background-position: 100% 100%; */
+
+  }
+  .button_bg{
+    background: url("../assets/imgs/button.png");
+    margin-top: 35%;width: 292px; height: 84px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 
 }

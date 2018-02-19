@@ -1,67 +1,101 @@
 
 
-<ion-content   class="background-home" padding>
+<ion-content no-bounce   class="background-home" padding>
+  <img src="assets/imgs/saudia.png" height="43" width="308" style="margin-left: auto;margin-top: 59px;display: block;margin-right: auto;width: 50%;"/>
+  <ion-card padding="" class="form_block">
+
+    <ion-grid class="fields">
+    <ion-row>
+
+    <ion-col padding>
+    <!--<p>First Name<sup>*</sup></p>-->
+      <img src="assets/imgs/title.png"/>
+      <ion-input style="background: #CCCBD6;border-radius: 7px;;padding-left: 13px;margin-top: 5px;" placeholder="Title" name= "first_name" [(ngModel)]="first_name" type="text">
+    </ion-input>
+    </ion-col>
+
+      <ion-col padding>
+        <img src="assets/imgs/name.png"/>
+        <ion-input style="border-radius: 7px;margin-top: 5px;background: #CCCBD6;padding-left: 5px;" placeholder="Name"  name= "last_name" [(ngModel)]="last_name"  type="text">
+        </ion-input>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col padding>
+        <!--<p>First Name<sup>*</sup></p>-->
+        <img src="assets/imgs/email.png"/>
+        <ion-input style="border-radius: 7px;background: #CCCBD6;padding-left: 12px;" placeholder="Email"  name= "email" [(ngModel)]="email"  type="text">
+        </ion-input>
+      </ion-col>
+      <ion-col padding>
+        <img  src="assets/imgs/phone_number.png"/>
+        <ion-input style="border-radius: 7px;background: #CCCBD6;padding-left: 5px;" placeholder="Phone Number"  name= "phone_number" [(ngModel)]="phone_number"  type="text">
+        </ion-input>
+      </ion-col>
+
+    </ion-row>
+      <ion-row>
+        <ion-col>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <div>
+    <button style="background: url(assets/imgs/button.png);width: 292px;height: 84px;background-repeat: no-repeat;display: block;margin: auto!important;" (click)="addDeveloper()">
+      <img src="assets/imgs/button text.png" height="45" width="96"/>
+    </button>
+  </div>
+  <div>
+  <img style="display: block;margin-left: auto;margin-right: auto;margin-top: 86px;" src="assets/imgs/camera.png" />
+  </div>
   <!--<h1 style="color: #18165A" align="center">BOARDING PASS!</h1>-->
-  <div class="boarding_pass">
-    <!--<img src="../../assets/imgs/boparding pass.png"/>-->
-    <!--<h1 style=" color: #868686;    margin-left: 22%">PICTURE PASS</h1>-->
-    <div class="fields">
+  <!--<div class="boarding_pass">-->
+    <!--&lt;!&ndash;<img src="../../assets/imgs/boparding pass.png"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<h1 style=" color: #868686;    margin-left: 22%">PICTURE PASS</h1>&ndash;&gt;-->
+    <!--<div class="fields">-->
+
+      <!---->
 
 
 
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <!--<p>First Name<sup>*</sup></p>-->
-            <ion-input placeholder="Title" class="title" name= "first_name" [(ngModel)]="first_name"  type="text">
-              </ion-input>
-          </ion-col>
-          <ion-col>
-            <!--<p style="margin-left: -27%;">Last Name<sup>*</sup></p>-->
-            <ion-input placeholder="Name" class="name" name= "last_name" [(ngModel)]="last_name"  type="text">
-            </ion-input>
-          </ion-col>
+      <!--<ion-grid style=" margin-top: -4%" >-->
+        <!--<ion-row>-->
           <!--<ion-col>-->
-            <!--<img src="assets/imgs/logo.png" height="82" width="349" padding-left="5px"/>-->
+          <!--&lt;!&ndash;<p>Phone Number<sup>*</sup></p>&ndash;&gt;-->
+          <!--<ion-input placeholder="Email" class="email " name= "email" [(ngModel)]="email"  type="text">-->
+          <!--</ion-input>-->
           <!--</ion-col>-->
-        </ion-row>
-      </ion-grid>
+        <!--</ion-row>-->
 
-      <ion-grid style=" margin-top: -4%" >
-        <ion-row>
-          <ion-col>
-          <!--<p>Phone Number<sup>*</sup></p>-->
-          <ion-input placeholder="Email" class="email " name= "email" [(ngModel)]="email"  type="text">
-          </ion-input>
-          </ion-col>
-        </ion-row>
+      <!--</ion-grid>-->
 
-      </ion-grid>
+      <!--<ion-grid style=" margin-top: -4%" >-->
+        <!--<ion-row>-->
+          <!--<ion-col>-->
+            <!--&lt;!&ndash;<p>Email<sup>*</sup></p>&ndash;&gt;-->
+            <!--<ion-input placeholder="Phone Number" name="phone_number" [(ngModel)]="phone_number" class="phone_number" type="text">-->
+            <!--</ion-input>-->
+          <!--</ion-col>-->
+        <!--</ion-row>-->
+      <!--</ion-grid>-->
 
-      <ion-grid style=" margin-top: -4%" >
-        <ion-row>
-          <ion-col>
-            <!--<p>Email<sup>*</sup></p>-->
-            <ion-input placeholder="Phone Number" name="phone_number" [(ngModel)]="phone_number" class="phone_number" type="text">
-            </ion-input>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
 
-    <button style="background: transparent;  margin-left: 30%;margin-top: 35%;width: 292px; height: 84px;" (click)="addDeveloper()" ion-button>   </button>
-  </div>
-  </div>
-    <!--<ion-item>-->
-      <!--<ion-label fixed="" style="color: black;background-color:  transparent;" class="label label-md" id="lbl-0">Username</ion-label>-->
-      <!--<ion-input style="color: black;background-color:  transparent;" class="label label-md" id="lbl-0" type="text" value=""></ion-input>-->
-    <!--</ion-item>-->
+  <!--</div>-->
+  <!--</div>-->
+    <!--&lt;!&ndash;<ion-item>&ndash;&gt;-->
+      <!--&lt;!&ndash;<ion-label fixed="" style="color: black;background-color:  transparent;" class="label label-md" id="lbl-0">Username</ion-label>&ndash;&gt;-->
+      <!--&lt;!&ndash;<ion-input style="color: black;background-color:  transparent;" class="label label-md" id="lbl-0" type="text" value=""></ion-input>&ndash;&gt;-->
+    <!--&lt;!&ndash;</ion-item>&ndash;&gt;-->
 
-    <!--<ion-item>-->
-      <!--<ion-label style="color: transparent"  fixed>Password</ion-label>-->
-      <!--<ion-input style="color: transparent" type="password"></ion-input>-->
-    <!--</ion-item>-->
+    <!--&lt;!&ndash;<ion-item>&ndash;&gt;-->
+      <!--&lt;!&ndash;<ion-label style="color: transparent"  fixed>Password</ion-label>&ndash;&gt;-->
+      <!--&lt;!&ndash;<ion-input style="color: transparent" type="password"></ion-input>&ndash;&gt;-->
+    <!--&lt;!&ndash;</ion-item>&ndash;&gt;-->
 
-</ion-content>
+
 <!--<ion-content padding>-->
   <!--<ion-item>-->
     <!--<ion-label stacked>What's your name?</ion-label>-->

@@ -23,7 +23,8 @@ import {Network} from "@ionic-native/network";
 import {OptionsPage} from "../pages/options/options";
 import {NativeStorage} from "@ionic-native/native-storage";
 import {HomescreenPage} from "../pages/homescreen/homescreen";
-
+import {Screenshot} from "@ionic-native/screenshot";
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 @NgModule({
   declarations: [
     MyApp,
@@ -63,6 +64,8 @@ import {HomescreenPage} from "../pages/homescreen/homescreen";
     CameraPreview,
     FileOpener,
     Network,
+    Screenshot,
+    ScreenOrientation,
     HttpModule,
     File,
     Toast,

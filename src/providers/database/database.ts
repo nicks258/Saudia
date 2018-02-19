@@ -45,9 +45,9 @@ export class DatabaseProvider {
       });
   }
 
-  addDeveloper(firstname, lastname, phonenumber,email) {
-    let data = [firstname, lastname, phonenumber,email]
-    return this.database.executeSql("INSERT INTO people (firstname, lastname, phonenumber,email) VALUES (?, ?, ?,?)", data).then(data => {
+  addDeveloper(name, phonenumber,email,image) {
+    let data = [name, phonenumber,email,image];
+    return this.database.executeSql("INSERT INTO people (name, phonenumber,email,image) VALUES (?, ? , ? , ?)", data).then(data => {
       return data;
     }, err => {
       console.log('Error: ', err);
@@ -55,9 +55,9 @@ export class DatabaseProvider {
     });
   }
 
-  addReferEntry(name,phonenumber,sync) {
-    let data = [name, phonenumber,sync];
-    return this.database.executeSql("INSERT INTO refer (name,phonenumber,sync) VALUES (?, ?, ?)", data).then(data => {
+  addReferEntry(name,phonenumber,email,sync) {
+    let data = [name, phonenumber,email,sync];
+    return this.database.executeSql("INSERT INTO referEntry (name,phonenumber,email,sync) VALUES (?, ?,?, ?)", data).then(data => {
       return data;
     }, err => {
       console.log('Error: ', err);
@@ -71,10 +71,10 @@ export class DatabaseProvider {
       if (data.rows.length > 0) {
         for (var i = 0; i < data.rows.length; i++) {
           developers.push({
-            firstname: data.rows.item(i).firstname,
-            lastname: data.rows.item(i).lastname,
+            name: data.rows.item(i).name,
             phonenumber: data.rows.item(i).phonenumber,
-            email: data.rows.item(i).email
+            email: data.rows.item(i).email,
+            image: data.rows.item(i).image,
           });
         }
       }
@@ -86,15 +86,15 @@ export class DatabaseProvider {
   }
 
   getAllRefer() {
-    return this.database.executeSql("SELECT * FROM refer", []).then((data) => {
+    return this.database.executeSql("SELECT * FROM referEntry", []).then((data) => {
       let developers = [];
       if (data.rows.length > 0) {
         for (var i = 0; i < data.rows.length; i++) {
           developers.push({
-            firstname: data.rows.item(i).firstname,
-            lastname: data.rows.item(i).lastname,
+            name: data.rows.item(i).name,
             phonenumber: data.rows.item(i).phonenumber,
-            email: data.rows.item(i).email
+            email: data.rows.item(i).email,
+            // email: data.rows.item(i).email
           });
         }
       }
